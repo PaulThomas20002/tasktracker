@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 
 export default function App() {
+  
   const [tasks, setTasks] = useState([
     {
         id: 1,
@@ -41,15 +42,18 @@ const toggleReminder = (id) => {
 }
 
 
-const AddTask = (task) => {
+const addTask = (task) => {
   console.log(task);
+  const id = Math.floor(Math.random() * 121) + 1
+  const newTask = {id, ...task }
+  setTasks([...tasks, newTask])
 }
 
   return (
     
     <div className="container">
     <Header />
-    <AddTask/>
+    <AddTask onAdd={addTask}/>
     {
     tasks.length > 0 ? 
     (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> )
