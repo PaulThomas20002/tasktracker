@@ -1,16 +1,5 @@
-
-import Task from './Task'
 /*
-export default function Tasks() {
-  return (
-    <> 
-      {tasks.map((task, index) => (
-        <Task key={index} task={task} onDelete={onDelete} onToggle={onToggle} />
-      ))} 
-    </>
-  )
-}
-*/
+import Task from './Task'
 
 export default function Tasks({tasks, onDelete }) {
   return (
@@ -22,3 +11,4 @@ export default function Tasks({tasks, onDelete }) {
     </div>
   )
 }
+*/
