@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 
 export default function App() {
-  
+  const [showAddTask, setShowAddTask] = useState(true)
   const [tasks, setTasks] = useState([
     {
         id: 1,
@@ -52,14 +52,16 @@ const addTask = (task) => {
   return (
     
     <div className="container">
-    <Header />
-    <AddTask onAdd={addTask}/>
+    <Header onAdd={ (e) => setShowAddTask(!showAddTask) }showAdd={showAddTask}/>
+    
+    {showAddTask && <AddTask onAdd={addTask}/>}
+
     {
     tasks.length > 0 ? 
     (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> )
     : 
     ('No Tasks')
     }
-  </div>
+    </div>
   )
 }
