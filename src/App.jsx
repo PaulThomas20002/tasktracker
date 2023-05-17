@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 export default function App() {
   const [showAddTask, setShowAddTask] = useState(true)
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState([/*
     {
         id: 1,
         text : 'Doctors Appointment',
@@ -25,7 +25,7 @@ export default function App() {
         text : 'Food Shopping',
         day : 'Feb 6th at 2:30pm',
         reminder : false,
-    },
+    },*/
 ])
 
 //delete task
